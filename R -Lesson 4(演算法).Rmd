@@ -19,7 +19,7 @@ abline(v = 2.45, col ="blue")
 abline(h = 1.75, col ="orange")
 predict_one = predict(fit, iris[1,])
 
-predict_all = predict(fit, iris,type="class")
+predict_all = predict(fit, iris,type="class") #這邊要記得加type="class"，不然下面table會出現問題
 table(iris$Species, predict_all)
 ```
 
@@ -107,4 +107,41 @@ churn.rp<-ctree(churn ~., data=trainset)
 plot(churn.rp, margin=0.1)
 ```
 
+##　caret cross- validation( K-fold)
+- install.packages("caret")
+```{r}
+library(caret)
+control=trainControl(method="repeatedcv", number=10, repeats=3)
+model =train(churn~., data=trainset, method="rpart", preProcess="scale", trControl=control)
+model
+predict(model, testset)
+```
+
+## Rminer (找出重要的變數)
+- 變數一個一個挑掉，看哪個變數消失後，會使準確率下降最多，那個就是最重要的變數
+- install.packages("rminer")
+- 下列會找出number_customer service calls 是重要的
+```{r}
+library(rminer)
+model=fit(churn~.,trainset,model="svm") #svm 可替換成rpart 或其他演算法
+VariableImportance=Importance(model,trainset,method="sensv")
+
+L=list(runs=1,sen=t(VariableImportance$imp),sresponses=VariableImportance$sresponses)
+mgraph(L,graph="IMP",leg=names(trainset),col="gray",Grid=10)
+```
+
+## ROC curve
+- install.packages("ROCR")
+```{r}
+library(ROCR)
+predictions <-predict(churn.rp, testset, type="prob")
+head(predictions)
+pred.to.roc<-predictions[, 1]
+head(pred.to.roc)
+pred.rocr<-prediction(pred.to.roc, testset$churn)
+pred.rocr
+perf.rocr<-performance(pred.rocr, measure ="auc", x.measure="cutoff")
+perf.tpr.rocr<-performance(pred.rocr, "tpr","fpr")
+plot(perf.tpr.rocr,colorize=T,main=paste("AUC:",(perf.rocr@y.values)))
+```
 
