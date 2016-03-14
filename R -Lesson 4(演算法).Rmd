@@ -1,0 +1,110 @@
+---
+title: "Iris Classfication with 演算法"
+author: "YenTing"
+date: "2016年3月14日"
+output: html_document
+---
+## Rpart 演算法
+- install.packages("rpart")
+```{r }
+library(rpart)
+data(iris)
+head(iris)
+
+fit = rpart(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data = iris)
+plot(fit, margin=0.1)
+text(fit)
+plot(iris$Petal.Length, iris$Petal.Width, col=iris$Species)
+abline(v = 2.45, col ="blue")
+abline(h = 1.75, col ="orange")
+predict_one = predict(fit, iris[1,])
+
+predict_all = predict(fit, iris,type="class")
+table(iris$Species, predict_all)
+```
+
+
+## Party
+- install.packages("party")
+```{r}
+library(party)
+data(iris)
+head(iris)
+
+fit2 = ctree(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data = iris)
+plot(fit, margin=0.1)
+
+plot(iris$Petal.Length, iris$Petal.Width, col=iris$Species)
+abline(v = 1.9, col ="blue")
+abline(h = 1.7, col ="orange")
+abline(v = 4.8, col ="red")
+predict_all2 = predict(fit2, iris)
+table(iris$Species, predict_all2)
+```
+
+## e1071
+- install.packages("e1071")
+- 沒有支援圖形，plot那些不能用
+```{r}
+library(e1071)
+fit4 = naiveBayes(Species ~ ., data = iris)
+predict_all4 = predict(fit4, iris)
+table(iris$Species, predict_all4)
+```
+
+
+## Churn analysis (電信公司顧客流失分析)(訓練與測試集)
+- install.packages("C50")
+```{r}
+library(C50)
+
+data(churn)
+str(churnTrain)
+names(churnTrain) %in% c("state", "area_code", "account_length")
+! names(churnTrain) %in% c("state", "area_code", "account_length")
+churnTrain=churnTrain[,!names(churnTrain)%in%c("state", "area_code", "account_length")] #只取前三欄
+
+set.seed(2)  #替sample設定號碼(才不會一直random)
+ind<-sample(2, nrow(churnTrain), replace=TRUE, prob=c(0.7, 0.3))
+trainset=churnTrain[ind==1,]
+testset=churnTrain[ind==2,]
+
+
+table(sample(2, replace=TRUE,100))
+table(sample(2, replace=TRUE,100, prob=c(0.7,0.3)))
+
+a = c(1,2,3,4,5,6,7,8,9)
+ind = c(1,0,1,0,1,0,1,0,1)
+ind == 1
+a[ind == 1]
+a[ind == 0]
+```
+
+## rpart analysis (用訓練分析來看rpart的演算法)
+```{r}
+churn.rp<-rpart(churn ~., data=trainset)
+plot(churn.rp, margin=0.1)
+text(churn.rp, all=TRUE, use.n=TRUE)
+```
+
+## Prune (剪枝)
+```{r}
+min(churn.rp$cptable[,"xerror"])
+which.min(churn.rp$cptable[,"xerror"])
+churn.cp = churn.rp$cptable[8, "CP"] #分成8個分枝，可以更改數字
+prune.tree=prune(churn.rp, cp=churn.cp)
+plot(prune.tree, margin=0.1)
+text(prune.tree, all=TRUE, use.n=TRUE)
+
+
+predictions <-predict(churn.rp, testset, type="class")
+table(testset$churn, predictions)
+```
+
+## ctree analysis (剪枝看看)
+```{r}
+churn.rp<-ctree(churn ~., data=trainset)
+plot(churn.rp, margin=0.1)
+```
+
+
