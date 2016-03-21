@@ -1,0 +1,82 @@
+---
+title: '20160321'
+author: "YenTing"
+date: "2016年3月21日"
+output: html_document
+---
+```{r}
+
+```
+
+## R語言 好用的 %>%概念
+- install.packages("rvest")
+```{r}
+library(rvest)
+#法一
+tail(head(iris), 3)
+
+#法二
+# magrittr:: %>%    把東西丟給下一個
+iris %>% head() %>% tail(3)
+
+```
+
+## 利用R爬蟲
+- install.packages("rvest")
+```{r}
+library(rvest)
+#編碼轉換
+Sys.setlocale(category = "LC_ALL", locale="C") 
+
+apple = read_html('http://www.appledaily.com.tw/realtimenews/section/new/', encoding="UTF-8")
+
+#myStr <- iconv(apple, from='UTF-8', to='UTF-8')
+domain = 'http://www.appledaily.com.tw'
+rtddt = apple %>% html_nodes('.rtddt')  
+time = sapply(rtddt, function(e) (e %>% html_node('time') %>% html_text() )) %>% iconv(from='UTF-8', to='UTF-8')
+h1 = sapply(rtddt, function(e) (e %>% html_node('h1') %>% html_text() )) %>% iconv(from='UTF-8', to='UTF-8') 
+h2 = sapply(rtddt, function(e) (e %>% html_node('h2') %>% html_text() ))  %>% iconv(from='UTF-8', to='UTF-8')
+url1 = sapply(rtddt, function(e) (e %>% html_node('a') %>% html_attr('href') %>% sub("http://www.appledaily.com.tw", ""))) 
+url = paste0(domain,url1) 
+Sys.setlocale(category = "LC_ALL", locale="")
+applenews = data.frame(title= h1, caregory = h2, time = time)
+```
+
+## 續
+```{r}
+#library(rvest)
+Sys.setlocale(category = "LC_ALL", locale="C")
+#paste0(as.character(3) , "seq")
+
+tail(head(iris), 3)
+# magrittr:: %>%
+
+iris %>% head() %>% tail(3)
+
+'seq' %>% paste0('o')
+
+
+domain = 'http://www.appledaily.com.tw'
+getDetail = function(url){
+  apple_detail = read_html(url, encoding="UTF-8")  
+  summary = apple_detail %>% html_node('.trans') %>% html_text() %>% iconv(from='UTF-8', to='UTF-8')
+  summary
+}
+
+applenews = data.frame()
+for(i in seq(1,3,1)){
+  apple = read_html(paste0('http://www.appledaily.com.tw/realtimenews/section/new/', as.character(i)), encoding="UTF-8")
+  rtddt = apple %>% html_nodes('.rtddt')  
+  url1 = sapply(rtddt, function(e) (e %>% html_node('a') %>% html_attr('href') %>% sub("http://www.appledaily.com.tw", "" ))) 
+  url = paste0(domain,url1) 
+  content = sapply(url, function(e) getDetail(e))  
+  time = sapply(rtddt, function(e) (e %>% html_node('time') %>% html_text() )) %>% iconv(from='UTF-8', to='UTF-8')
+  h1 = sapply(rtddt, function(e) (e %>% html_node('h1') %>% html_text() )) %>% iconv(from='UTF-8', to='UTF-8') 
+  h2 = sapply(rtddt, function(e) (e %>% html_node('h2') %>% html_text() ))  %>% iconv(from='UTF-8', to='UTF-8')
+  applenews = rbind(applenews, data.frame(title= h1, caregory = h2, time = time, content= content))  
+}
+
+Sys.setlocale(category = "LC_ALL", locale="")
+applenews
+```
+

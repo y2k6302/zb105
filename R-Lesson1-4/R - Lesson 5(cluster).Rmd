@@ -1,0 +1,107 @@
+---
+title: "R - Lesson 6 (cluster)"
+author: "YenTing"
+date: "2016年3月21日"
+output: html_document
+---
+
+```{r}
+x =c(0, 0, 1, 1, 1, 1)
+y =c(1, 0, 1, 1, 0, 1)
+
+#euclidean (歐式)
+dist(rbind(x,y), method ="euclidean")
+sqrt(sum((x-y)^2))
+dist(rbind(x,y), method ="minkowski", p=2)   # 用閔可夫斯基距離給p=2等於是『歐式距離』
+
+#city block (曼哈頓)
+dist(rbind(x,y), method ="manhattan")
+sum(abs(x-y))
+dist(rbind(x,y), method ="minkowski", p=1)
+```
+
+## 階層式分群-聚合式
+```{r}
+# customer clustering (顧客分群應用)
+customer=read.csv('customer.csv',header=TRUE)
+head(customer)
+str(customer)
+customer =scale(customer[,-1])
+hc=hclust(dist(customer, method="euclidean"), method="ward.D2")  #method 可隨意替換  single、compelete、average、ward.D2
+plot(hc, hang =-0.01, cex=0.7)
+
+hc3 =hclust(dist(customer), method="single")
+plot(hc3, hang =-0.01, cex=0.7)
+
+```
+
+## 階層式分群-分裂式
+```{r}
+library(cluster)
+#?diana
+dv =diana(customer, metric ="euclidean")
+summary(dv)
+plot(dv)
+
+# iris clustering
+data(iris)
+hc2=hclust(dist(iris[,-5], method="euclidean"), method="ward.D2")
+plot(hc2, hang =-0.01, cex=0.7)
+
+
+#使用 cutree 樹做分群
+fit =cutree(hc, k =4)
+table(fit)  #可看每群內容為合
+plot(hc)
+rect.hclust(hc, k =4, border="red")   #可選擇要分幾群，跟畫出邊界
+rect.hclust(hc, k =3, border="blue")
+```
+
+## K-means 分群
+```{r}
+#客戶資料
+str(customer)
+set.seed(22) #給固定的種子數目
+fit =kmeans(customer, 4)  #customer 資料本身有4種屬性，所以是4
+barplot(t(fit$centers), beside =TRUE,xlab="cluster", ylab="value")
+plot(customer, col=fit$cluster)
+
+#iris資料
+set.seed(22)
+fit =kmeans(iris[,-5], 3)  #只取iris前面的資料，最後面的屬性不拿iris[,-5],分三群
+barplot(t(fit$centers), beside =TRUE,xlab="cluster", ylab="value")
+plot(iris, col=fit$cluster)
+
+```
+
+## K-means 如何決定要分幾群
+```{r}
+#法一  silhouette
+set.seed(22)
+km =kmeans(customer, 4)
+kms=silhouette(km$cluster,dist(customer))
+summary(kms)
+plot(kms)
+```
+
+```{r}
+#法二 wss
+nk=2:10 #分別帶入2.3.4.5.6群.....畫出一個折線圖，看轉折點在哪，就是分幾群比較好
+set.seed(22)
+WSS =sapply(nk, function(k){
+  kmeans(customer, centers=k)$tot.withinss
+  })
+
+WSS
+plot(nk, WSS, type="l", xlab="number of k", ylab="within sum of squares")
+```
+
+## 將上述兩個決定k值的方法綜合起來用
+```{r}
+#install.packages("fpc")
+library(fpc)
+SW =sapply(nk, function(k){cluster.stats(dist(customer), kmeans(customer, centers=k)$cluster)$avg.silwidth
+  })
+plot(nk, SW, type="l", xlab="number of clusers", ylab="average silhouette width")
+```
+
