@@ -1,0 +1,98 @@
+#group1_table{
+	border:5px 	#708090 ridge;
+	border-radius:10px 10px;
+	margin-left:400px;
+	float:left;     /*浮動原件,讓盒子以下面一層為基準去看要相對放在哪裡*/
+}
+
+#group2_table{
+	border:5px #708090 ridge;
+	border-radius:10px 10px;
+	float:left;     /*浮動原件,讓盒子以下面一層為基準去看要相對放在哪裡*/
+	margin-left:20px;
+}
+
+#group1_content{
+	color:black;
+}
+
+#group2_content{
+	color:black;
+}
+
+#grap1Title{
+	color:black;
+	font:normal 16px Tahoma;
+}
+
+#grap2Title{
+	color:black;
+	font:normal 16px Tahoma;
+}
+
+.theme{
+	color:#EE7700;
+	text-align:center;
+	font-family: 'Titillium Web', sans-serif;
+	font:normal 30px 'Titillium Web';
+}
+
+#post_title1{
+	color:black;
+	font:normal 24px Tahoma;
+}
+
+#post_title2{
+	color:black;
+	font:normal 24px Tahoma;
+}
+
+#post_date1{
+	color:black;
+}
+
+#post_date2{
+	color:black;
+}
+
+body{
+	background-color:white;
+	/* background-image:url('../images/bg007.gif'); */
+}
+
+#connect_group1{
+	float:right;
+	margin-right:230px;
+}
+h1{
+	font-family: 'Titillium Web', sans-serif;
+	font:normal 28px 'Titillium Web' ;
+	color:black;
+	background:#FFCF78;
+	text-align:center;
+}
+
+h2{
+	font:normal 28px Tahoma;
+	color:black;
+}
+h3{
+	font:bold 15px Tahoma;
+	color:steelblue;
+} 
+
+#timeline_body{
+	/* background-image:url('../images/033573d5541d8ef0000002b019501ae.jpg'); */
+　	border:1px #ccc solid;
+}
+
+.connect_text{
+	font-family: 'Titillium Web', sans-serif;
+	font:bold 24px 'Titillium Web';
+	text-align:center;
+}
+
+.connect{
+	text-align:center;
+}
+

@@ -1,0 +1,134 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+@media screen and (max-width: 480px) {
+svg{
+	height: 180px;
+}
+#micmark{
+		/* border:solid 1px blue; */
+		float:left;
+		margin-left:5%;
+		}	
+#brandnameindex{
+	display:none;
+	/* font-weight:bold;
+	font-size : 100px;
+	text-align:center;
+	float:left;
+	margin-top:0px;
+	color: #555f66; */
+	}		
+	.col-lg-7{
+	margin-left:10px;
+	margin-right:10px;
+	}
+	nav{
+		width:20%;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+svg{
+	height: 220px;
+}
+#micmark{
+		/* border:solid 1px blue; */
+		float:left;
+		margin-left:16%;
+		}	
+#brandnameindex{
+	display:none;
+	/* font-weight:bold;
+	font-size : 100px;
+	text-align:center;
+	float:left;
+	margin-top:0px;
+	color: #555f66; */
+	}		
+	.col-lg-7{
+	margin-left:5%;
+	margin-right:10px;
+	}
+	nav{
+		width:40%;
+	}
+}
+
+@media   (min-width: 769px) and (max-width: 1200px) {
+#micmark{
+		/* border:solid 1px blue; */
+		float:left;
+		margin-left:5%;
+		}
+#brandnameindex{
+	
+	/* display:none; */
+	font-weight:bold;
+	font-size : 50px;
+	/* text-align:center; */
+	float:left;
+	margin-top:0px;
+	color: #555f66;
+	}
+	nav{
+		width:60%;
+	}
+}
+
+@media screen and (min-width: 1201px) {
+#micmark{
+		/* border:solid 1px blue; */
+		float:left;
+		margin-left:25%;
+		}
+#brandnameindex{
+	
+	font-weight:bold;
+	font-size : 100px;
+	text-align:center;
+	float:left;
+	margin-top:0px;
+	color: #555f66;
+	}
+	
+.col-lg-7{
+	margin-left:410px;
+	margin-right:10px;
+}	
+.form-control{
+	float:left;
+	height:50px;
+}
+}
+/* #micmark{
+		/* border:solid 1px blue; */
+		/* float:left;
+		margin-left:25%;
+		} */ */
+
+
+#brandnameindex{
+	
+	font-weight:bold;
+	font-size : 100px;
+	text-align:center;
+	float:left;
+	margin-top:0px;
+	color: #555f66;
+}
+
+.form-control{
+	width:300px;
+	/* margin-top:10px; */
+	height:50px;
+}
+.input-group-btn{
+	
+	margin-right:30px;
+}
+span {
+	margin-left:10px;
+	
+}
+button {
+	margin-left:20px;
+}

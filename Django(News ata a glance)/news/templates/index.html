@@ -1,0 +1,52 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	<!-- template套件------------------------------------------------------------------------ -->
+		<link rel="stylesheet" href="{% static 'css/skel.css' %}" type="text/css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+		<link rel="stylesheet" href="{% static 'css/style-xlarge.css' %}" type="text/css">
+	<!-- template套件------------------------------------------------------------------------ -->
+		<!-- Latest compiled and minified CSS -->
+	<!-- bootstrap套件------------------------------------------------------------------------ -->	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- bootstrap套件------------------------------------------------------------------------ -->
+		<!-- Optional theme -->
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"> -->
+	<!-- 自寫套件,順序盡量放在後面,因為要引用前面套件設定好的code------------------------ -->	
+		<link rel="stylesheet" href="{% static 'css/index.css' %}">
+	<!-- 自寫套件------------------------------------------------------------------------ -->
+		<title>News</title>
+	</head>
+	<body>
+	<!-- 大標 -------------------------------------------------------------------------->
+		<a name = "first"><svg height = "250"></a>
+			<div id="outdiv">
+					<div id="micmark">	
+						<img src="{% static 'images/mic.ico' %}">
+					</div>
+				<div id="brandnameindex">News  At  A  Glance</div>
+			</div>
+		<a name = "secound"><svg height = "250"></a>
+	<!-- 大標 -------------------------------------------------------------------------->		
+	<!-- 查詢欄位 -------------------------------------------------------------------------->		
+		<form  id = "form" action="/news/search" method="get"  >  <!-- 在此網頁被GET時，自動在url部份加入/search，讓url.py可以抓到並且進入到其他網頁 -->
+		<nav id="nav">
+			<!-- 搜尋Button -->
+			<div class="col-lg-7" >
+				<div class="input-group" >
+				  <input type="search" class="form-control" placeholder="Search for..." name="name">
+				  <span class="input-group-btn">
+					<button class="btn btn-default" type="submit">Search!</button>
+				  </span>
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+		</nav>
+		</form>
+	<!-- 查詢欄位 -------------------------------------------------------------------------->	
+	</body>
+<html>

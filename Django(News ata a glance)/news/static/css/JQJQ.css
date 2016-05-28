@@ -1,0 +1,987 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+
+
+/* ====================================================================== */
+@media screen and (max-width: 480px) {
+h3{
+	display:none;
+}
+
+form {
+		background: #ffffff;
+		color: #555f66;
+		cursor: default;
+		height: 5em;
+		left: 1;
+		line-height: 1em;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 10000;
+		box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.25);
+		opacity: 0.95;
+	.navbar-header{
+		width:220px;
+	}	
+.navbar-header{
+		width:220px;
+		
+	}
+	}
+		form .top{
+			margin: 20px;
+			margin-left:8%;
+			height: 50px;
+			width:100%;
+			line-height: inherit;
+			/* position: absolute; */
+			display: inline-block;
+			
+		}
+		 .form-control{
+			margin-top:10px;
+			height:50px;
+		} 
+	
+		form button{
+			margin: 10px;
+			background-color:white;
+			position: relative;
+			
+			right: 0.25em;
+			top: 0;
+			
+			float:left;
+		}	
+	/* #form nav {
+			display:none;
+		}	 */
+		
+	form .kw {
+			display:none;
+		}	
+		
+.div1 {
+background-color :#A42D00;
+	}	
+.div2{
+	height:50px;
+}	
+.div3{
+	height:50px;
+}
+#slider{
+	display:none;
+}
+
+
+#micmark{
+		/* border:solid 1px blue; */
+		
+		display:none;
+	}
+
+		
+#brandname{
+	display:none;
+	}	
+	
+.P1{
+	font-family : DFKai-sb;
+	font-weight: 800;
+	font-size : 24px;
+	margin-left:34%;	
+	}
+
+.P2{
+/* background: #FFE1AB; */
+	font-family : DFKai-sb;
+	font-weight: 800;
+	font-size : 24px;
+	margin-left:34%;	
+	}
+	#chartContainer svg{
+	display:none;	
+	}	
+	
+	#chartContainer chart{
+	display:none;	
+	}
+	.PP{
+	margin:80px;
+	margin-left:90px;
+}	
+	#Q1 {
+		margin-left:25%;
+		
+	}
+	#Q2 {
+		margin-left:25%;
+		
+	}
+	
+
+	#chartContainer2 svg{
+	display:none;	
+	}	
+	
+	#chartContainer2 chart{
+	display:none;	
+	}		
+#pos_table{	
+	margin-left:12%;
+	}
+
+#neg_table{			
+	margin-left:12%;
+	
+	}			
+	#footer .copyright {
+			color: #bbb;
+			font-size: 0.9em;
+			margin: 3%;
+			padding: 0;
+			
+		}
+	.row{
+	display:none;
+}
+}
+
+/* 480=================================================================== */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+h3{
+	display:none;
+}
+form {
+		background: #ffffff;
+		color: #555f66;
+		cursor: default;
+		height: 5em;
+		left: 1;
+		line-height: 1em;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 10000;
+		box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.25);
+		opacity: 0.95;
+		
+		
+	}
+	.navbar-header{
+		width:480px;
+		
+	}
+
+		form .top{
+			margin: 20px;
+			margin-left:16%;
+			height: 50px;
+			width:100%;
+			line-height: inherit;
+			/* position: absolute; */
+			display: inline-block;
+			
+		}
+		 .form-control{
+			margin-top:10px;
+	height:50px;
+		} 
+		
+		form button{
+			margin: 10px;
+			background-color:white;
+			position: relative;
+			
+			right: 0.25em;
+			top: 0;
+			
+			float:left;
+		}
+	
+		/* #form nav {
+					display:none;
+				}		 */
+		form .kw {
+					display:none;
+					
+				}	
+.div1{
+
+ /* font-size: 20px; */
+	background-color:orange;
+	}
+.div2{
+	height:50px;
+}	
+.div3{
+	height:50px;
+}
+#slider{
+	display:none;
+}
+
+/* #outdiv{
+	border:solid 1px red;  
+} */
+	#micmark{
+		/* border:solid 1px blue; */
+		display:none;
+	}
+
+		
+	#brandname{
+		display:none;
+		}	
+
+
+	.P1{
+	font-family : DFKai-sb;
+	font-weight: 800;
+	font-size : 36px;
+	
+	margin-left:33%;	
+	}
+
+	.P2{
+	/* background: #FFE1AB; */
+	font-family : DFKai-sb;
+	font-weight: 800;
+	font-size : 36px;
+	
+	margin-left:33%;	
+	}
+	
+	
+	#chartContainer svg{
+	display:none;	
+	}	
+	
+	#chartContainer chart{
+	display:none;	
+	}
+	
+	#Q1 {
+		margin-left:33%;
+	}
+	#Q2 {
+		margin-left:33%;
+	}
+	
+	#chartContainer2 svg{
+	display:none;	
+	}	
+	
+	#chartContainer2 chart{
+	display:none;	
+	}		
+#emontional_count{
+ 	/* border:1px 	red ridge; */
+	text-align:left;
+	font:bold 20px Tahoma;
+	color:#EE7700;
+}	
+#pos_table{	
+	margin-left:25%;
+	}
+
+#neg_table{			
+	margin-left:25%;
+	
+	}		
+
+.row{
+	display:none;
+}
+	
+	
+	
+}
+
+
+/* 768=================================================================== */
+@media   (min-width: 769px) and (max-width: 1200px) {
+h3{
+	display:none;
+}
+
+form {
+		background: #ffffff;
+		color: #555f66;
+		cursor: default;
+		height: 5em;
+		left: 1;
+		line-height: 1em;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 10000;
+		box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.25);
+		opacity: 0.95;
+		
+		
+	}
+.navbar-header{
+		width:480px;
+	}
+		/* form .top{
+			margin: 20px;
+			margin-left:16%;
+			height: 50px;
+			width:100%;
+			line-height: inherit;
+			position: absolute;
+			display: inline-block;
+			
+		} */
+		/* input{
+			/* position:relative; */
+			/* z-index:2; */
+			/* float:left; */
+			/* width:10%; */
+			/* margin-left:5px;
+			margin-top:2px; */
+			/* vertical-align: middle;  */
+			/* float:left; */
+		/* }  */
+		.i1{
+			/* position:relative;  */
+			/* z-index:2; */
+			/* float:left;  */
+			width:10%;
+			margin-left:5px;
+			margin-top:2px;
+			/* vertical-align: middle;  */
+			/* float:left; */
+		}
+		form button{
+			margin: 10px;
+			background-color:white;
+			position: relative;
+			
+			right: 0.25em;
+			top: 0;
+			
+			float:left;
+		}
+		form .kw{
+			/* width:45%; */
+			/* margin-top:5px;
+			margin-left: 20px;
+			font-family: Meiryo;
+			position: relative; */
+			display:none;
+			/* float:left; */
+		}
+/* #form nav {
+			float:left;
+			margin: 20px;
+			margin-top: 5em;
+			margin-left:18%;
+			position: relative;
+			text-align:center;
+		}		 */
+#slider{
+	clear:both;
+	height: 600px;
+	width :1900px;
+	padding: 0;
+	display:block;
+}
+/* #outdiv{
+	border:solid 1px red;  
+} */
+	#micmark{
+		/* border:solid 1px blue; */
+		float:left;
+		margin-left:19%;
+	}
+
+		
+	#brandname{
+		
+		font-weight:bold;
+		font-size : 45px;
+		text-align:center;
+		float:left;
+		margin-top:30px;
+		color: #555f66;
+		}	
+
+.div1 {
+
+ /* font-size: 30px; */
+	background-color :green;
+	}
+	.P1{
+	/* background: #FFE1AB; */
+	font-family : DFKai-sb;
+	font-weight: 800;
+	font-size : 36px;
+	
+	margin-left:40%;	
+	}
+
+	.P2{
+	/* background: #FFE1AB; */
+	font-family : DFKai-sb;
+	font-weight: 800;
+	font-size : 36px;
+	
+	margin-left:40%;
+	}
+	
+	
+	/* #chartContainer svg{
+	margin-left:2%;
+	width:1000px;
+	height:600px;
+	
+	}	
+	
+	#chartContainer chart{
+	width:900px;
+	height:480px;
+	
+	}	 */
+	#Q1 svg{
+	display:none;
+	}	
+	#Q2 svg{
+	display:none;
+	}	
+	
+#pos_table{
+	
+	/* float:left;  */    /* 浮動原件,讓盒子以下面一層為基準去看要相對放在哪裡 */
+	margin-left:36%;
+	}
+
+#neg_table{
+	
+	/* display : inline-block; */
+	
+	margin-left:36%;
+	
+	}		
+
+	
+
+}
+/* 1200================================================================== */
+@media screen and (min-width: 1201px) {
+
+
+form {
+		background: #ffffff;
+		color: #555f66;
+		cursor: default;
+		height: 5em;
+		left: 1;
+		line-height: 1em;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 10000;
+		box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.25);
+		opacity: 0.95;
+		
+	}
+	.navbar-header{
+		width:550px;
+	}
+	
+
+	
+		
+		/* form input{
+			position:relative;
+			z-index:2;
+			float:left;
+			width:15%;
+			margin-left:5px;
+			margin-top:2px;
+			vertical-align: middle; 
+			float:left;
+		} */
+	
+		form button{
+			float:left;
+			margin: 10px;
+			background-color:white;
+			position: relative;
+			
+			right: 0.25em;
+			top: 0;
+			
+			
+		}
+		form .kw{
+			/* width:45%; */
+			margin-top:5px;
+			margin-left: 300px;
+			font-family: Meiryo;
+			position: relative;
+			
+			/* float:left; */
+		}
+		
+		/* #form nav {
+			
+			margin: 20px;
+					
+			position: absolute;			
+			right: 1.25em;
+			top: 0;
+
+				}	 */
+				
+.div1 {
+ background-color :#000088;
+	}	
+.div4 {
+ display:none;
+	}		
+	
+#slider{
+	clear:both;
+	height: 600px;
+	width :1900px;
+	padding: 0;
+	display:block;
+}
+
+	#micmark{
+		/* border:solid 1px blue; */
+		float:left;
+		margin-left:30%;
+		}
+		
+	#brandname{
+		
+		font-weight:bold;
+		font-size : 80px;
+		text-align:center;
+		float:left;
+		margin-top:20px;
+		color: #555f66;
+		}	
+	
+.P1{
+	/* background: #FFE1AB; */
+	font-family : Microsoft JhengHei UI;
+	font-weight: 900;
+	font-size : 48px;
+	
+	text-align:center;	
+	}
+
+.P2{
+	/* background: #FFE1AB; */
+	font-family : Microsoft JhengHei UI;
+	font-weight: 900;
+	font-size : 48px;
+	
+	text-align:center;	
+	}
+	
+/* #chartContainer svg{
+	width:1380px;
+	height:600px;
+	
+	}	
+#chartContainer chart{
+	width:1300px;
+	height:480px;
+	
+	}	 */
+	#Q1 svg{
+	display:none;
+	}	
+	#Q2 svg{
+	display:none;
+	}	
+#pos_table{
+	
+	float:left;     /* 浮動原件,讓盒子以下面一層為基準去看要相對放在哪裡 */
+	margin-left:28.5%;
+	}
+
+#neg_table{
+	
+	display : inline-block;
+	margin-right:13%;
+	
+	}	
+	
+
+	
+	
+	
+}
+
+/* ===================================== */
+
+
+
+/* 控制輪播圖片 */
+/* #slider{
+	clear:both;
+	height: 600px;
+	width :1900px;
+	padding: 0;
+	display:block;
+} */
+
+.show1{
+	background:url("../images/earth01.jpg") no-repeat scroll 0 0 transparent;
+	padding: 0 ;
+	height: 600px;
+	width :2400px;
+
+}
+.show2{
+	background:url("../images/city02.jpg") no-repeat scroll 0 0 transparent;
+	padding: 0 ;
+	height: 600px;
+	width :2400px;
+
+}
+.show3{
+	background:url("../images/data05.jpg") no-repeat scroll 0 0 transparent;
+	padding: 0 ;
+	height: 600px;
+	width :2400px;
+
+}
+.show4{
+	background:url("../images/144.jpg") no-repeat scroll 0 0 transparent;
+	padding: 0 ;
+	height: 600px;
+	width :2400px;
+
+}
+
+/* 按鈕滑入前底色樣式 */
+
+
+.guideconnect{
+	font-family:Microsoft JhengHei UI;
+	font-size : 24px ;
+	float:left;
+	margin-top:5px;
+	text-decoration:none;
+	border:solid 1px white;
+	border-width: 16px;
+	opacity: 1;
+}
+
+/*  按鈕滑入時變換底色樣式 */  
+.guideover{
+	font-family :Microsoft JhengHei UI;
+	font-weight :bold;
+	font-size : 24px ;
+	margin-top:5px;
+	float:left;
+	border:solid 1px #FFCF78;
+	border-width: 16px;
+ 	background:#FFCF78;
+	border-radius:5px 5px;
+	text-decoration:none;
+	opacity: 1;
+	} 
+
+
+
+/* .P1{
+	background: #FFE1AB;
+	font-family : DFKai-sb;
+	font-weight: 900;
+	font-size : 48px;
+	
+	text-align:center;	
+} */
+
+#outdiv{
+	/* border:solid 1px red;   */
+}
+
+/* #brandname{
+	/* border:solid 1px black;   */
+	/* font-weight:bold;
+	font-size : 100px;
+	text-align:center;
+	float:left;
+	margin-top:50px;
+	color: #555f66;
+} */ 
+#micmark{
+		/* border:solid 1px blue; */
+		float:left;
+		margin-left:25%;
+		}
+#brandnameindex{
+	
+	font-weight:bold;
+	font-size : 100px;
+	text-align:center;
+	float:left;
+	margin-top:0px;
+	color: #555f66;
+}
+
+/* #micmark{
+	border:solid 1px blue;
+	float:left;
+	margin-left:26%;
+} */
+
+/* #form{
+	margin-left:540px;
+} */
+#chartContainer{
+	text-align:center;
+	
+}
+
+/* #chartContainer svg{
+	width:1380px;
+	height:600px;
+	
+} */
+
+
+
+#chartContainer2{
+	text-align:center;
+	
+}
+
+
+
+
+
+div.table-title {
+  display: block;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+}
+
+.table-title h3 {
+   color: #fafafa;
+   font-size: 30px;
+   font-weight: 400;
+   font-style:normal;
+   font-family: "Roboto", helvetica, arial, sans-serif;
+   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+   text-transform:uppercase;
+}
+
+
+/*** Table Styles **/
+
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 220px;
+  margin: auto;
+  max-width: 300px;   /* 調table寬度的地方 */
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+th {
+  color:#D5DDE5;;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:18px;
+  font-weight: 100;
+  padding:19px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:10px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+  border-bottom: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:8px;     /* 調字體跟框框之間的距離 */
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:16px;  /* 調字體大小的地方 */
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-title {	
+	color:white;
+  text-align: center;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {	
+  text-align: left;
+}
+
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+
+
+#emontional_count{
+ 	/* border:1px 	red ridge; */
+	text-align:center;
+	font:bold 20px Tahoma;
+	color:#EE7700;
+}
+
+#pos_table{
+	height: 380px; width:310px;
+	border:5px 	#708090 ridge;
+	border-radius:10px 10px;
+	/* float:left;  */    /* 浮動原件,讓盒子以下面一層為基準去看要相對放在哪裡 */
+
+	}
+
+#neg_table{
+	height: 380px; width:310px;
+	border:5px 	#708090 ridge;
+	border-radius:10px 10px;
+	/* display : inline-block; */
+	
+
+	
+	}		
+	.aster-day { 
+  line-height: 5;
+  font-weight: bold;
+  font-size: 260%;
+}
+/* input{
+	width:15%;
+} */
+#footer {
+		background: #595959;
+		padding: 4em 0 6em 0;
+		color: #bbb;
+	}
+	#footer .copyright {
+			color: #bbb;
+			font-size: 0.9em;
+			margin: 2em 0 0 0;
+			padding: 0;
+			text-align: center;
+		}
+	#footer .copyright li {
+				border-left: solid 1px rgba(144, 144, 144, 0.25);
+				display: inline-block;
+				list-style: none;
+				margin-left: 1.5em;
+				padding-left: 1.5em;
+			}
+	#footer #p9 {
+	color:#FFFF33;
+	}				
+.form-control{
+	width:300px;
+	margin-top:10px;
+	height:50px;
+}
+.btn{
+	margin-left:2px;
+	margin-bottom:none;
+}
+/* input[type="search"] {
+	margin-top:8px;
+	width:200px;
+}
+
+input[type="submit"]{
+	float:left;
+} */
+button {
+	margin-top:15px;
+}
+.container-fluid{
+	height:80px;
+}
+.col-lg-3{
+	text-align:center;
+}

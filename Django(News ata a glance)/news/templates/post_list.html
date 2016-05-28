@@ -1,0 +1,642 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+		<!-- Latest compiled and minified CSS -->
+		
+	<!-- bootstrap套件------------------------------------------------------------------------ -->
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  -->
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+		
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>   
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+		<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- bootstrap套件------------------------------------------------------------------------ -->
+		
+		<!-- Optional theme -->
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"> -->
+		
+	<!-- jQuery套件------------------------------------------------------------------------ -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+	<!-- jQuery套件------------------------------------------------------------------------ -->
+		
+		<!-- for Clustering -->
+		
+	<!-- template套件------------------------------------------------------------------------ -->
+		<!-- <link rel="stylesheet" href="{% static 'css/skel.css" type="text/css">
+		<link rel="stylesheet" href="{% static 'css/style.css" type="text/css">
+		<link rel="stylesheet" href="{% static 'css/style-xlarge.css" type="text/css"> -->
+	<!-- template套件------------------------------------------------------------------------ -->
+		
+		<!-- For TextMining_Emotional -->
+		
+	<!-- 繪製分析圖套件------------------------------------------------------------------------ -->
+		<script src="{% static 'js/d3.v3.min.js' %}"></script>
+		<script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+		<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+		<link rel="stylesheet" type="text/css" href="pie.css">
+		<!-- <script src="d3.v3.4.8.js"></script> -->
+		<!-- <script src="dimple.v2.2.0.js"></script> -->
+	<!-- 繪製分析圖套件------------------------------------------------------------------------ -->
+		
+		<style> 
+		<!-- h3{ float:left}  -->
+		</style> 
+		
+	<!-- 按鍵滑動套件------------------------------------------------------------------------ -->
+		<script type="text/javascript" src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery-1.6.min.js' %}"></script>
+	<!-- 按鍵滑動套件------------------------------------------------------------------------ -->
+		
+	<!-- 輪播圖片套件------------------------------------------------------------------------ -->
+		<script type="text/javascript" src="{% static 'js/jquery.cycle.lite.js' %}"></script>
+	<!-- 輪播圖片套件------------------------------------------------------------------------ -->
+	
+	<!-- For 情緒詞統計 -->
+		
+		<!-- <link rel="stylesheet" href="{% static 'css/style_sentimental.css"> -->
+		
+	<!-- 自寫套件,順序盡量放在後面,因為要引用前面套件設定好的code------------------------ -->
+		<script type="text/javascript" src="{% static 'js/JQJQ.js' %}"></script>
+		<link rel="stylesheet" href="{% static 'css/JQJQ.css' %}">
+	<!-- 自寫套件------------------------------------------------------------------------ -->
+		<script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+		
+		
+		
+		
+		<title>News  At  A  Glance</title>
+	</head>
+
+	<body >
+	
+	<!-- 置頂視窗------------------------------------------------------------------------ -->
+			<form >
+					<!-- <div class = "top"> -->
+					
+					<!-- </div> -->
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="container-fluid">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								
+						<h3>搜尋新聞</h3>		
+					<!-- <svg width='36px' height='36px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-default"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(0 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(30 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.08333333333333333s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(60 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.16666666666666666s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(90 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.25s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(120 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.3333333333333333s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(150 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.4166666666666667s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(180 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.5s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(210 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.5833333333333334s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(240 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.6666666666666666s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(270 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.75s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(300 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.8333333333333334s' repeatCount='indefinite'/></rect><rect  x='46.5' y='40' width='7' height='20' rx='5' ry='5' fill='#00b2ff' transform='rotate(330 50 50) translate(0 -30)'>  <animate attributeName='opacity' from='1' to='0' dur='1s' begin='0.9166666666666666s' repeatCount='indefinite'/></rect></svg>	 -->
+					<!-- 搜尋Button -->
+
+						<!-- <input type="search" class="form-control" placeholder="Search for..." name="name"> -->
+					
+						<!-- <img src="{% static 'images/search.jpg"> -->
+							<!-- <span class="input-group-btn"> -->
+						<!-- <button class="btn btn-default" type="submit">Search!</button> -->
+							<!-- </span> -->
+						
+			<!-- 搜尋Button -->
+							
+								<div class="input-group" >
+								  <input type="search" class="form-control" placeholder="Search for..." name="name">
+								  <span class="input-group-btn">
+									<button class="btn btn-default" type="submit">Search!</button>
+								  </span>
+								</div><!-- /input-group -->
+							
+						
+						
+						<div class = "kw">搜尋關鍵字：{{sentence}} </div>  
+						<div class = "kw">搜尋結果：{{count}}篇新聞</div>
+						
+							</div>
+ 
+						<ul class="collapse navbar-collapse  navbar-right" id="bs-example-navbar-collapse-1">
+							
+							<div class="guideconnect"><a href="#" id="Top" style="text-decoration:none;" >置頂</a></div>	
+							<div class="guideconnect"><a href="#" id="One" style="text-decoration:none;"> 數量分析 </a></div>
+							<div class="guideconnect"><a href="#" id="Two" style="text-decoration:none;"> 情緒分析 </a></div>
+							<div class="guideconnect"><a href="#" id="Third" style="text-decoration:none;"> 情緒詞 </a></div>
+							<div class="guideconnect"><a href="timeliner/group1/{{sentence}}" style="text-decoration:none; " target="_blank">懶人包</a></div>
+						</ul>
+						
+						
+						
+					</nav>
+				<!-- <nav id="nav">	 -->
+				
+					<!-- <div> <!-- 按鈕 --> 
+						
+					<!-- </div> <!-- 按鈕 --> 
+
+
+
+				</nav>
+			</form>
+	<!-- 置頂視窗------------------------------------------------------------------------ -->
+		<div class = "div1">
+		<a name = "top"><svg height = "75" width="100%"></a> <!-- 插入一個svg圖來控制頂層留白 -->
+		</div>
+	<!-- 輪播圖片 ------------------------------------------------------------------------>
+		<div id = "slider">
+			<div class="show1"></div>
+			<div class="show2"></div>
+			<div class="show3"></div>
+			<div class="show4"></div>
+		</div>
+	<!-- 輪播圖片 ------------------------------------------------------------------------>
+		<br>
+	<!-- 大標 -------------------------------------------------------------------------->
+		<div id="outdiv">
+			<div id="micmark">	
+				<img src="{% static 'images/mic.ico' %}">
+			</div>
+			<div id="brandname">News  At  A  Glance</div>
+		</div>
+	<!-- 大標 -------------------------------------------------------------------------->
+		
+		<div class = "div2">
+		<svg height = "105" width="100%">
+		</div>
+	<div class = "P1">數量分析圖</div>
+		
+		<div class = "div3">
+		<svg height = "58" width="100%">
+		</div>
+	<!-- 數量分析圖開始 -->
+		<div id="chartContainer">
+		
+			<script type="text/javascript">
+		  
+			var svg = dimple.newSvg("#chartContainer", 1380, 600);
+			<!-- function rendering() { -->
+			var linedata = {{trends | safe}};
+			
+			
+			var chart = new dimple.chart(svg, linedata);
+			chart.setBounds(75, 30, 1300, 480);
+			var x = chart.addCategoryAxis("x", ["date","title"]);
+			x.addOrderRule("date");
+			chart.addMeasureAxis("y", "daycount");
+			
+			var s = chart.addSeries("Channel", dimple.plot.line);
+			//chart.setStoryboard("daycount") //由小到大凸顯每個bart
+			
+			s.lineWeight = 3;
+			s.lineMarkers = true; //資料點位顯示
+			
+
+			//s.interpolation = "cardinal";   //曲線or圓弧
+			chart.addLegend(80, 10, 500, 20, "left");
+			chart.draw();
+			<!-- } -->
+			
+			<!-- d3.select(window).on('resize', rendering); -->
+
+			<!-- rendering(); -->
+			
+			</script>
+		
+		</div>
+		
+		<div id="Q1">
+			<script type="text/javascript">
+			
+			<!-- alert("haha"); -->
+			var linedata = {{trends | safe}};
+			
+			date = linedata[0].date;
+			daycount = linedata[0].daycount;
+			
+			<!-- alert(typeof(linedata)) -->
+			<!-- alert(date); -->
+			<!-- alert(daycount); -->
+			
+			
+			var data = [
+				  
+				  { "day":""+daycount,"weight":0.5,"color":"#9E0041","title":""+date },
+				  { "day":""+(linedata[1].daycount),"weight":0.5,"color":"#C32F4B","title":""+(linedata[1].date)},
+				  { "day":""+(linedata[2].daycount),"weight":0.5,"color":"#E1514B","title":""+(linedata[2].date)},
+				  { "day":""+(linedata[3].daycount),"weight":0.5,"color":"#FB9F59","title":""+(linedata[3].date) },
+				  { "day":""+(linedata[4].daycount),"weight":0.5,"color":"#FEC574","title":""+(linedata[4].date) },
+				  { "day":""+(linedata[5].daycount),"weight":0.5,"color":"#FAE38C","title":""+(linedata[5].date) },
+				  { "day":""+(linedata[6].daycount),"weight":0.5,"color":"#C7E89E","title":""+(linedata[6].date) },
+				  { "day":""+(linedata[7].daycount),"weight":0.5,"color":"#9CD6A4","title":""+(linedata[7].date) },
+				  { "day":""+(linedata[8].daycount),"weight":0.5,"color":"#6CC4A4","title":""+(linedata[8].date) },
+				  { "day":""+(linedata[9].daycount),"weight":0.5,"color":"#4D9DB4","title":""+(linedata[9].date) },
+				  { "day":""+(linedata[10].daycount),"weight":0.5,"color":"#4776B4","title":""+(linedata[10].date) },
+				  { "day":""+(linedata[11].daycount),"weight":0.5,"color":"#5E4EA1","title":""+(linedata[11].date) },
+				  
+				];
+			
+			var width = 200,
+				height = 200,
+				radius = Math.min(width, height) / 2,
+				innerRadius = 0.5 * radius;
+
+			var pie = d3.layout.pie()
+				.sort(null)
+				.value(function(d) { return d.width; });
+
+			var tip = d3.tip()
+			  .attr('class', 'd3-tip')
+			  .offset([0, 0])
+			  .html(function(d) {
+				return d.data.title + ": <span style='color:orangered'>" + d.data.day + "</span>";
+			  });
+
+			var arc = d3.svg.arc()
+			  .innerRadius(innerRadius)
+			  .outerRadius(function (d) { 
+				return (radius - innerRadius) * (d.data.day / 5.0) + innerRadius; 
+			  });
+
+			var outlineArc = d3.svg.arc()
+					.innerRadius(innerRadius)
+					.outerRadius(radius);
+
+			var svg = d3.select("#Q1").append("svg")
+				.attr("width", width)
+				.attr("height", height)
+				.append("g")
+				.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+			svg.call(tip);
+			
+			<!-- var title =[] -->
+			<!-- var date =[] -->
+			<!-- {% for post in trends %}  -->
+					
+				<!-- title.push('{{ post.title }}'); -->
+				<!-- date.push('{{ post.date }}'); -->
+			<!-- {% endfor %} -->
+			
+			<!-- var linedata = {{trends | safe}}; -->
+			
+		
+			  data.forEach(function(d) {
+				d.id     =  d.id;
+				d.order  = +d.order;
+				d.color  =  d.color;
+				d.weight = +d.weight;
+				d.day  = +d.day;
+				d.width  = +d.weight;
+				d.FF  =  d.FF;
+			  });
+
+			  
+			  var path = svg.selectAll(".solidArc")
+				  .data(pie(data))
+				.enter().append("path")
+				  .attr("fill", function(d) { return d.data.color; })
+				  .attr("class", "solidArc")
+				  .attr("stroke", "gray")
+				  .attr("d", arc)
+				  .on('mouseover', tip.show)
+				  .on('mouseout', tip.hide);
+
+			  var outerPath = svg.selectAll(".outlineArc")
+				  .data(pie(data))
+				.enter().append("path")
+				  .attr("fill", "none")
+				  .attr("stroke", "gray")
+				  .attr("class", "outlineArc")
+				  .attr("d", outlineArc);  
+
+			  var day = 
+				data.reduce(function(a, b) {
+				  return a + (b.day); 
+				}, 0);
+				 
+			
+
+			  svg.append("svg:text")
+				.attr("class", "aster-day")
+				.attr("dy", ".35em")
+				.attr("text-anchor", "middle") 
+				.text(Math.round(day));
+
+			
+
+			</script>
+		</div>
+
+	<!-- 數量分析圖結束 -->
+		<div class = "div3">
+		<svg height = "58" width="100%">
+		</div>
+	<div class = "P1">情緒分析圖</div>
+		<div class = "div3">
+		<svg height = "58" width="100%">
+		</div>
+	<!-- 以下是情緒分析圖 -->
+		<div id="chartContainer2">  
+		
+			<script type="text/javascript">
+			var svg = dimple.newSvg("#chartContainer2", 1380, 600); //畫布的長寬
+			
+		
+			<!-- 把viws.py 傳過來的json變數拿來用 -->
+			var data = {{pos_neg_json | safe}};   //加個 | safe可以讓傳過來的變數保持原本的型態跟格式
+			//alert(typeof(data))
+			//alert(data)	
+			
+			// Create and Position a Chart
+			var chart = new dimple.chart(svg, data);
+			chart.setBounds(75, 30, 1300, 480);   //圖形的長寬(第三個參數)
+			
+			//x軸設定
+			var x = chart.addCategoryAxis("x", ["Date","Title"]);
+			x.addOrderRule("Date");
+			
+			chart.addMeasureAxis("y", "Count");  //給y軸名稱
+			//chart.addCategoryAxis("x", "Data");
+			
+			<!-- 是否呈現顏色 -->
+			// Min price will be green, middle price yellow and max red
+			//chart.addColorAxis("Price", ["green", "yellow", "red"]);
+			
+			<!-- chart.addSeries(null, dimple.plot.bar); -->
+			var a = chart.addSeries("Channel", dimple.plot.line);   
+			
+			//var b = chart.addSeries("Channel", dimple.plot.bubble);  //再畫一條有圓點再轉軸的圖
+			//var s = chart.addSeries("null", dimple.plot.line);       //總和曲線
+
+			<!-- 軸線設定 -->
+			a.lineWeight = 3;       //調整軸線的粗度
+			a.lineMarkers = true;   //轉折處是否出現圓點
+			
+			<!-- 線條圓弧 or 折線 (要直線就直接註解掉就好) -->
+			//a.interpolation = "cardinal";
+			//s.interpolation = "cardinal";
+			
+			//未知
+			chart.addLegend(80, 10, 500, 20, "left");
+			
+			//畫線
+			chart.draw();
+			
+			</script>
+		</div>  
+		<div id="Q2">
+			<script type="text/javascript">
+			var linedata = {{trends | safe}};
+			
+			date = linedata[0].date;
+			daycount = linedata[0].daycount;
+			
+			var width = 200,
+				height = 200,
+				radius = Math.min(width, height) / 2,
+				innerRadius = 0.5 * radius;
+
+			var pie = d3.layout.pie()
+				.sort(null)
+				.value(function(d) { return d.width; });
+
+			var tip = d3.tip()
+			  .attr('class', 'd3-tip')
+			  .offset([0, 0])
+			  .html(function(d) {
+				return d.data.title + ": <span style='color:orangered'>" + d.data.day + "</span>";
+			  });
+
+			var arc = d3.svg.arc()
+			  .innerRadius(innerRadius)
+			  .outerRadius(function (d) { 
+				return (radius - innerRadius) * (d.data.day / 5.0) + innerRadius; 
+			  });
+
+			var outlineArc = d3.svg.arc()
+					.innerRadius(innerRadius)
+					.outerRadius(radius);
+
+			var svg = d3.select("#Q2").append("svg")
+				.attr("width", width)
+				.attr("height", height)
+				.append("g")
+				.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+			svg.call(tip);
+			
+			<!-- var title =[] -->
+			<!-- var date =[] -->
+			<!-- {% for post in trends %}  -->
+					
+				<!-- title.push('{{ post.title }}'); -->
+				<!-- date.push('{{ post.date }}'); -->
+			<!-- {% endfor %} -->
+
+			var data = [
+				  { "day":""+(linedata[12].daycount),"weight":0.5,"color":"#A20055","title":""+(linedata[12].date) },
+				  { "day":""+(linedata[13].daycount),"weight":0.5,"color":"#C63300","title":""+(linedata[13].date) },
+				  { "day":""+(linedata[14].daycount),"weight":0.5,"color":"#CC6600","title":""+(linedata[14].date) },
+				  { "day":""+(linedata[15].daycount),"weight":0.5,"color":"#A20055","title":""+(linedata[15].date) },
+				  { "day":""+(linedata[16].daycount),"weight":0.5,"color":"#C63300","title":""+(linedata[16].date) },
+				  { "day":""+(linedata[17].daycount),"weight":0.5,"color":"#CC6600","title":""+(linedata[17].date) },
+				  { "day":""+(linedata[18].daycount),"weight":0.5,"color":"#5555FF","title":""+(linedata[18].date) },
+				  { "day":""+(linedata[19].daycount),"weight":0.5,"color":"#007799","title":""+(linedata[19].date) },
+				  { "day":""+(linedata[20].daycount),"weight":0.5,"color":"#00AAAA","title":""+(linedata[20].date) },
+				  { "day":""+(linedata[21].daycount),"weight":0.5,"color":"#5555FF","title":""+(linedata[21].date) },
+				  { "day":""+(linedata[22].daycount),"weight":0.5,"color":"#007799","title":""+(linedata[22].date) },
+				  { "day":""+(linedata[23].daycount),"weight":0.5,"color":"#00AAAA","title":""+(linedata[23].date) },
+				  
+				];
+				 
+		
+			  data.forEach(function(d) {
+				d.id     =  d.id;
+				d.order  = +d.order;
+				d.color  =  d.color;
+				d.weight = +d.weight;
+				d.day  = +d.day;
+				d.width  = +d.weight;
+				d.FF  =  d.FF;
+			  });
+
+			  
+			  var path = svg.selectAll(".solidArc")
+				  .data(pie(data))
+				.enter().append("path")
+				  .attr("fill", function(d) { return d.data.color; })
+				  .attr("class", "solidArc")
+				  .attr("stroke", "gray")
+				  .attr("d", arc)
+				  .on('mouseover', tip.show)
+				  .on('mouseout', tip.hide);
+
+			  var outerPath = svg.selectAll(".outlineArc")
+				  .data(pie(data))
+				.enter().append("path")
+				  .attr("fill", "none")
+				  .attr("stroke", "gray")
+				  .attr("class", "outlineArc")
+				  .attr("d", outlineArc);  
+
+			  var day = 
+				data.reduce(function(a, b) {
+				  return a + (b.day); 
+				}, 0);
+				 
+			
+
+			  svg.append("svg:text")
+				.attr("class", "aster-day")
+				.attr("dy", ".35em")
+				.attr("text-anchor", "middle") 
+				.text(Math.round(day));
+
+			
+
+			</script>
+		</div>
+	<!-- 情緒分析圖結束 -->
+		<div class = "div3">
+		<svg height = "58" width="100%">
+		</div>
+		<div class = "P2">情緒詞分析表</div>		
+		<div class = "div3">
+		<svg height = "58" width="100%">
+		</div>
+	<!-- 情緒詞統計圖開始 -->
+
+		<div id="emontional_count">
+			<div id="pos_table">
+			<p>正向詞</p>
+				<div style="overflow-x: auto; overflow-y: auto; height: 300px; width:300px;" >
+
+					<table class="table-fill">
+					<thead>
+						<tr>
+							<th class="text-title">Word</th>
+							<th class="text-title">Count</th>
+						</tr>
+					</thead>
+					
+					<tbody class="table-hover">
+					{% for post in all_pos_word %}   
+						<tr>
+							<td class="text-left">{{post.pos}}</td>
+							<td class="text-left">{{post.count}}</td>
+						</tr>
+					{% endfor %}
+
+					</tbody>
+					</table>
+				</div>
+			</div>
+			<div class = "div4">
+			<svg height = "80" width="100%">
+			</div>
+			<!-- ------------------------------------------------------------------------------- -->
+			<!-- ------------------------------------------------------------------------------- -->
+<!-- 		<div>
+				<h3>負向詞</h3>
+			</div> -->
+			<div id="neg_table">
+			<p>負向詞</p>
+				<div style="overflow-x: auto; overflow-y: auto; height: 300px; width:300px;" >
+					<table class="table-fill" >
+					<thead>
+						<tr>
+							<th class="text-title">Word</th>
+							<th class="text-title">Count</th>
+						</tr>
+					</thead>
+					
+					<tbody class="table-hover">
+					{% for post in all_neg_word %}   
+						<tr>
+							<td class="text-left">{{post.neg}}</td>
+							<td class="text-left">{{post.count}}</td>
+						</tr>
+					{% endfor %}
+
+					</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+
+	<!-- 情緒詞統計圖開始結束 -->
+	
+	<!-- 置底-------------------------------------------------------------------------->
+		<footer id="footer">
+			<div class="container marketing">
+				<div class="row">
+					<div class="col-lg-3">
+
+					<img class="img-circle" src="{% static 'images/Dr.jpg' %}"  alt="Generic placeholder image" style="width:140px;height:140px">
+					<h2>建宇</h2>
+					<p>無時無刻都在凌虐各種程式語言的組長，興趣是寫各種使用手冊來懲罰組員</p>
+					</div>
+					
+					<div class="col-lg-3">
+					<img class="img-circle" src="{% static 'images/y.jpg' %}"  alt="Generic placeholder image" style="width:140px;height:140px">
+					<h2>彥廷</h2>
+					<p>眼神很殺的專案發想人，資料看到他都自動排排站好，有條不紊。</p>
+					</div>
+					
+					<div class="col-lg-3">
+					<img class="img-circle" src="{% static 'images/G.jpg' %}"  alt="Generic placeholder image" style="width:140px;height:140px">
+					<h2>簡群</h2>
+					<p>一手將200萬筆資料抓取的魔鬼筋肉人。</p>
+					<p id="p9">沒有痛苦，沒有收獲。</p>
+					</div>
+				</div>	
+				<div class="row">
+					<div class="col-lg-3">
+
+					<img class="img-circle" src="{% static 'images/bella.jpg' %}"  alt="Generic placeholder image" style="width:140px;height:140px">
+					<h2>佳慧</h2>
+					<p>在名為"Hadoop生態系"的舞池中，揮灑魅力的Dancer。</p>
+					</div>
+					
+					<div class="col-lg-3">
+					<img class="img-circle" src="{% static 'images/xing.jpg' %}"  alt="Generic placeholder image" style="width:140px;height:140px">
+					<h2>建興</h2>
+					<p>用背影說話的男人，他所有的故事都寫在MongoDB裡面了。</p>
+					<p id="p9">Stay hungry， Stay foolish。</p>
+					</div>
+					
+					<div class="col-lg-3">
+					<img class="img-circle" src="{% static 'images/ming.jpg' %}"  alt="Generic placeholder image" style="width:140px;height:140px">
+					<h2>家銘</h2>
+					<p>常常對著Web低語的前端，最近開始會偷copy別人網站的程式碼。</p>
+					</div>
+					<div class="col-lg-3">
+					<img class="img-circle" src="{% static 'images/py.jpg' %}"  alt="Generic placeholder image" style="width:140px;height:140px">
+					<h2>子申</h2>
+					<p>真實身分為py神，母語是python，第二個會的語言是中文。</p>
+					<!-- <p id="p9">有人覺得，他生下來就是為了寫python，但我們更相信，python這語言是為了他才誕生的。</p> -->
+					</div>
+				</div>	
+			</div>
+			<div class="container">			
+				<ul class="copyright">
+					<li>Copyright &copy; ZB105</li>						
+				</ul>
+			</div>
+		</footer>
+	<!-- 置底-------------------------------------------------------------------------->
+		
+	</body>
+<html>
